@@ -1,4 +1,6 @@
 package es.egven.tjenterprise.model;
 
-public interface ProductDAO {
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProductDAO extends CrudRepository<Product, Integer> {
 }
