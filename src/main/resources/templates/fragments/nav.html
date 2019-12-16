@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"
+<html lang="${#locale.language}"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+<nav th:fragment="nav(page)" class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{~/index}"><img th:src="@{~/img/logo.png}" alt="logo"></a>
+        <h2>TJenterprise</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a th:href="@{~/index}" th:class="'nav-link '+ ${(page == 'index')?'active':''}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{~/contact}" th:class="'nav-link '+ ${(page == 'contact')?'active':''}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{~/cart}" th:class="'nav-link '+ ${(page == 'cart')?'active':''}">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </html>
