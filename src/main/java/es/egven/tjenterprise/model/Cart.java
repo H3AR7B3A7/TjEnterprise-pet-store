@@ -47,21 +47,14 @@ public class Cart {
         return cartContent;
     }
 
-    public void setCartContent(HashMap<String, BigDecimal> cartContent) {
-        this.cartContent = cartContent;
-    }
-
     public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
 
 
     @Override
-    public String toString() {
+    public static String toString() {
         return "Cart{" +
                 "cartContent=" + cartContent +
                 ", totalPrice=" + totalPrice +
