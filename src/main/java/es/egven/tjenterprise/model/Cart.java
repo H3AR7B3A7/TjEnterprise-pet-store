@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Cart {
 
-    private HashMap<String,BigDecimal> cartContent;
+    private HashMap<String, BigDecimal> cartContent;
     private BigDecimal totalPrice;
 
     public Cart(HashMap<String, BigDecimal> cartContent, BigDecimal totalPrice) {
@@ -16,9 +16,11 @@ public class Cart {
     /**
      * ADD item to cart
      */
-    public void addItemToCart(String s,BigDecimal b){
+    public void addItemToCart(String s, BigDecimal b){
         cartContent.put(s, b);
-        totalPrice.add(b);
+        BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
+        BigDecimal toBeAdded = new BigDecimal(String.valueOf(b));
+        totalPrice = new BigDecimal(String.valueOf(currentTotal.add(toBeAdded)));
     }
 
     /**
@@ -26,7 +28,9 @@ public class Cart {
      */
     public void removeItemFromCart(String s, BigDecimal b){
         cartContent.remove(s, b);
-        totalPrice.subtract(b);
+        BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
+        BigDecimal toBeSubtracted = new BigDecimal(String.valueOf(b));
+        totalPrice = new BigDecimal(String.valueOf(currentTotal.subtract(toBeSubtracted)));
     }
 
     /**
