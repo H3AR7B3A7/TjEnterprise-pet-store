@@ -3,11 +3,17 @@ package es.egven.tjenterprise.model;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
+/**
+ * CART MODEL
+ * @author dog.D
+ */
 public class Cart {
 
+    // Fields
     private HashMap<String, BigDecimal> cartContent;
     private BigDecimal totalPrice;
 
+    // Constructor
     public Cart(HashMap<String, BigDecimal> cartContent, BigDecimal totalPrice) {
         this.cartContent = new HashMap<>();
         this.totalPrice = totalPrice;
@@ -42,7 +48,7 @@ public class Cart {
     }
 
 
-
+    // Getters
     public HashMap<String, BigDecimal> getCartContent() {
         return cartContent;
     }
@@ -52,9 +58,12 @@ public class Cart {
     }
 
 
-
+    /**
+     * ToString Method to make Order
+     * @return Order/cartContent in string
+     */
     @Override
-    public static String toString() {
+    public String toString() {
         return "Cart{" +
                 "cartContent=" + cartContent +
                 ", totalPrice=" + totalPrice +

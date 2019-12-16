@@ -1,9 +1,12 @@
 package es.egven.tjenterprise.model;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import javax.validation.constraints.NotEmpty;
 
-//https://github.com/ikismail/ShoppingCart/blob/master/src/main/java/com/model/CustomerOrder.java
+/**
+ * ORDER MODEL
+ * @author dog.D
+ */
 @Entity
 @Table(name = "order")
 public class Order {
@@ -12,22 +15,21 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int orderId;
 
+    @NotEmpty
     private String orderContent;
 
+
+    // Constructor
     public Order() {
     }
 
+
+    // Getters & Setters
     public String getOrderContent(String s) { return orderContent; }
 
     public void setOrderContent(String orderContent) { this.orderContent = orderContent; }
 
-    public int getOrderId() {
-        return orderId;
-    }
+    public int getOrderId() { return orderId; }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-
+    public void setOrderId(int orderId) { this.orderId = orderId; }
 }
