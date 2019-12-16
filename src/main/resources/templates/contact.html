@@ -5,6 +5,19 @@
 <head th:replace="~{fragments/head::head}"></head>
 <!--  PAGE  -->
 <body>
-
+<div id="page-container">
+    <div id="content-wrap">
+        <!--  NAV  -->
+        <nav th:replace="~{fragments/nav::nav(contact)}"></nav>
+        <!--  CONTENT  -->
+        <div class="container-fluid padding">
+            <div class="text-center padding">
+                <h1>Contact</h1>
+            </div>
+        </div>
+    </div>
+    <!--  FOOTER  -->
+    <footer th:replace="~{fragments/footer::footer}"></footer>
+</div>
 </body>
 </html>
