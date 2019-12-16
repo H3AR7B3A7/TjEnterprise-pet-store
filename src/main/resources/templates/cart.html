@@ -12,7 +12,33 @@
         <!--  CONTENT  -->
         <div class="container-fluid padding">
             <div class="text-center padding">
-                <h1>Contact</h1>
+                <h1>Cart</h1>
+            </div>
+            <div class="tableWrapper text-center">
+                <table id="cartTable">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--  TODO : find out how to model cart and/or where to create it-->
+                    <tr th:each="String : ${cartContent}">
+                        <td th:text="${cartContent.string}"></td>
+                        <td th:text="${cartContent.price}"></td>
+                        <td>
+                            <a class="btn" th:href="@{removeItemFromCart()}" onclick="return confirm('Are you sure?')">x</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center padding">
+                <form method="get" action="/cart/order">
+                    <button type="submit" class="btn">Place Order</button>
+                </form>
             </div>
         </div>
     </div>
