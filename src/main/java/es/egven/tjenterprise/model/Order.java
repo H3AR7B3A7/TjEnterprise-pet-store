@@ -1,7 +1,7 @@
 package es.egven.tjenterprise.model;
 
 import javax.persistence.*;
-
+//https://github.com/ikismail/ShoppingCart/blob/master/src/main/java/com/model/CustomerOrder.java
 @Entity
 @Table(name = "order")
 public class Order {
