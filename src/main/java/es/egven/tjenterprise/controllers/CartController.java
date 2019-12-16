@@ -5,6 +5,11 @@ import es.egven.tjenterprise.model.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+/**
+ * PRODUCT CONTROLLER
+ *
+ * @author d.Dog
+ */
 @Controller
 public class CartController {
 

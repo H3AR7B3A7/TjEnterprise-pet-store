@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"
+<html lang="${#locale.language}"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<footer th:fragment="footer">
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="copy">
+                <hr class="light">
+                <h5>&copy;
+                    <script>document.write(new Date().getFullYear())</script>
+                    - by dog.D
+                </h5>
+            </div>
+        </div>
+    </div>
+</footer>
