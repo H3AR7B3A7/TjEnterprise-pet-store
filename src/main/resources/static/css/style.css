@@ -1,8 +1,4 @@
 /* NAV STYLING */
-.card {
-    width: 13rem;
-    height: 18rem;
-}
 
 .navbar{
     background-color: teal !important;
@@ -17,4 +13,27 @@
     font-size: 1.6em !important;
 }
 
-/*  */
+/* INDEX STYLING */
+
+.row{
+    width: 80%;
+    float: right;
+}
+.card {
+    width: 13rem;
+    height: 18rem;
+}
+#addProductBtn {
+    background-color: teal;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    padding-left:13px;
+    padding-right: 13px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.addBtn{
+    text-align: right !important;
+}

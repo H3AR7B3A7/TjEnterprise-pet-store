@@ -2,6 +2,8 @@ package es.egven.tjenterprise.controllers;
 
 import es.egven.tjenterprise.model.Cart;
 import es.egven.tjenterprise.model.Product;
+import es.egven.tjenterprise.model.ProductDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ import java.util.HashMap;
 @Controller
 public class CartController {
 
+    @Autowired
+    ProductDAO dao;
+
     @ModelAttribute("nCart")
     public Cart winkelKarAanmaken() {
         return new Cart();
@@ -36,29 +41,27 @@ public class CartController {
         return new Product();
     }
 
-    @RequestMapping(value = "/cart", method = RequestMethod.POST)
-    public String addProduct(@ModelAttribute("nProduct") @Valid Product nProduct, BindingResult bindingResult,
-                             @ModelAttribute("nCart") Cart nCart){
+   /*@RequestMapping(value = "/cart", method = RequestMethod.POST)
+    public String addProduct(@ModelAttribute("nProduct") @Valid Product nProduct, BindingResult bindingResult
+                             /*@ModelAttribute("nCart") Cart nCart){
         if(bindingResult.hasErrors()){
             return "contact";
         }
         Cart.addItemToCart(nProduct);
         return "cart";
-    }
+    }*/
 
-    @RequestMapping(method = RequestMethod.GET, value="/cart/list")
+    /*@RequestMapping(method = RequestMethod.GET, value="/cart")
     @ResponseBody
-    public ArrayList<Product> toonWinkelKar(){return Cart.cartContent;}
+    public ArrayList<Product> toonWinkelKar(){return Cart.cartContent;}*/
 
-    @PostMapping(value = "/cart/add")
-    public ResponseEntity addProductToCart(@RequestParam(value="naam") String naam,
-                                            @RequestParam(value ="prijs") BigDecimal prijs){
-        Product nProduct = new Product();
-        nProduct.setNaam(naam);
-        nProduct.setPrijs(prijs);
+    @GetMapping(value = "/{id}")
+    public String addProductToCart(@PathVariable(value = "id") int id){
+        Product nProduct = dao.findById(id).get();
         Cart.addItemToCart(nProduct);
 
-        return new ResponseEntity(HttpStatus.OK);
+        return "redirect:/index";
+
     }
 
 
