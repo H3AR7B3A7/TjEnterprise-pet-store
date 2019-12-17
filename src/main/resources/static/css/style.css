@@ -1,4 +1,8 @@
 /* NAV STYLING */
+#whiteCart{
+    height: 2rem;
+    width: auto;
+}
 
 .navbar{
     background-color: teal !important;
@@ -16,23 +20,46 @@
 /* INDEX STYLING */
 
 .row{
-    width: 80%;
-    float: right;
+    text-align: center;
+    /*don't use float, or footer will break*/
+    /*float: right;*/
+    /*and add a div, in row, with whole page content to make place for filter*/
+    /*don't set width to 80%*/
+    /*sorry for this ^^*/
 }
+
+/*Fixed card size*/
 .card {
-    width: 13rem;
-    height: 18rem;
+    width: 14rem;
+    height: 26rem;
 }
+
+/*Fixed card img height, bcs some browsers do scale and offset cards content*/
+/*Maybe look for specific size pictures using google img tools, ex: 600x800*/
+.card img{
+    height: 10rem;
+}
+
+/*These make card a lot bigger, consider 1 line titles only*/
+/*This fixes double line title offspring for '+' buttons*/
+.card-title-container{
+    /*padding-bottom: 1rem;*/
+}
+/*Maybe consider other font(size)?*/
+/*This fixes double line comments offspring for '+' buttons*/
+.card-body p{
+    height: 2rem;
+}
+
 #addProductBtn {
     background-color: teal;
     border: none;
     color: white;
     border-radius: 50%;
-    font-size: 20px;
-    padding-left:13px;
-    padding-right: 13px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    font-size: 1.2em;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    bottom: 0 !important;
 }
 .addBtn{
     text-align: right !important;

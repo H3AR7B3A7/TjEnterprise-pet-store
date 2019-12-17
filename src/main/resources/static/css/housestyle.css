@@ -23,7 +23,7 @@ html, body{
     font-size: 1.1em !important;
 }
 
-img{
+.navbar-brand img{
     max-height: 80px;
     width: auto;
 }
@@ -164,8 +164,8 @@ footer{
     background-color: #3f3f3f;
     color: #d5d5d5;
     padding-top: 2rem;
-    position: absolute;
-    bottom: 0;
+    position: absolute !important;
+    bottom: 0 !important;
     width: 100%;
 }
 
