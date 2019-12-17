@@ -25,7 +25,7 @@ public class OrderController {
     @GetMapping("/cart/order")
     public String createOrder(Cart cart){
         String orderContent = cart.toString();
-        new Order().getOrderContent(orderContent);
+        getOrderContent(orderContent);
         // TODO : figure out logic (need to save?)
         return "redirect:checkout";
     }

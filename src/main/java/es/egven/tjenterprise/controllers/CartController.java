@@ -28,8 +28,8 @@ public class CartController {
 
     @GetMapping
     public Cart getCart(){
-        .getCartContent();
-        .getTotalPrice();
+        nCart.getCartContent();
+        nCart.getTotalPrice();
     }
 
 

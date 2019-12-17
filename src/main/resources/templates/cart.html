@@ -25,11 +25,11 @@
                     </thead>
                     <tbody>
                     <!--  TODO : find out how to model cart and/or where to create it-->
-                    <tr th:each="String : ${cartContent}">
-                        <td th:text="${cartContent.string}"></td>
-                        <td th:text="${cartContent.price}"></td>
+                    <tr th:each="cartContent : ${nCart}">
+                        <td th:text="${nCart.getCartContent()}"></td>
+                        <td th:text="${nCart.getTotalPrice()}"></td>
                         <td>
-                            <a class="btn" th:href="@{removeItemFromCart()}" onclick="return confirm('Are you sure?')">x</a>
+                            <a class="btn" th:href="@{nCart.removeItemFromCart()}" onclick="return confirm('Are you sure?')">x</a>
                         </td>
                     </tr>
                     </tbody>
