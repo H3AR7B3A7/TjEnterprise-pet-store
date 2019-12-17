@@ -1,6 +1,7 @@
 package es.egven.tjenterprise.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -10,34 +11,34 @@ import java.util.HashMap;
 public class Cart {
 
     // Fields
-    private HashMap<String, BigDecimal> cartContent;
-    private BigDecimal totalPrice;
+    public static ArrayList<Product> cartContent = new ArrayList<>();
+    private static BigDecimal totalPrice;
+
 
     // Constructor
-    public Cart(HashMap<String, BigDecimal> cartContent, BigDecimal totalPrice) {
-        this.cartContent = new HashMap<>();
-        this.totalPrice = totalPrice;
+
+    public Cart() {
     }
 
     /**
      * ADD item to cart
      */
-    public void addItemToCart(String s, BigDecimal b){
-        cartContent.put(s, b);
-        BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
+    public static void addItemToCart(Product product){
+        cartContent.add(product);
+        /*BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
         BigDecimal toBeAdded = new BigDecimal(String.valueOf(b));
-        totalPrice = new BigDecimal(String.valueOf(currentTotal.add(toBeAdded)));
+        totalPrice = new BigDecimal(String.valueOf(currentTotal.add(toBeAdded)));*/
     }
 
     /**
      * REMOVE item from cart
      */
-    public void removeItemFromCart(String s, BigDecimal b){
+    /*public void removeItemFromCart(String s, BigDecimal b){
         cartContent.remove(s, b);
         BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
         BigDecimal toBeSubtracted = new BigDecimal(String.valueOf(b));
         totalPrice = new BigDecimal(String.valueOf(currentTotal.subtract(toBeSubtracted)));
-    }
+    }*/
 
     /**
      * CLEAR all items from cart
@@ -51,7 +52,7 @@ public class Cart {
     //  and find price for each product again to add to totalPrice. ^^
 
     // Getters
-    public HashMap<String, BigDecimal> getCartContent() {
+    public ArrayList<Product> getCartContent() {
         return cartContent;
     }
 
