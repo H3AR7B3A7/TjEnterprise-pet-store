@@ -28,17 +28,17 @@ public class CartController {
         return new Cart(new HashMap<>(), new BigDecimal(0));
     }
 
-    @PostMapping(value = "/add")
-    ResponseEntity addProductToCart(){
-
-    }
-
-
-    @GetMapping
-    public Cart getCart(){
-        nCart.getCartContent();
-        nCart.getTotalPrice();
-    }
+//    @PostMapping(value = "/add")
+//    ResponseEntity addProductToCart(){
+//
+//    }
+//
+//
+//    @GetMapping
+//    public Cart getCart(){
+//        nCart.getCartContent();
+//        nCart.getTotalPrice();
+//    }
 
 
 }

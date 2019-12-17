@@ -1,4 +1,20 @@
+/* NAV STYLING */
 .card {
     width: 13rem;
     height: 18rem;
 }
+
+.navbar{
+    background-color: teal !important;
+    color: white; !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.active{
+    font-size: 1.6em !important;
+}
+
+/*  */

@@ -22,12 +22,12 @@ public class OrderController {
      * @param cart
      * @return checkout page
      */
-    @GetMapping("/cart/order")
-    public String createOrder(Cart cart){
-        String orderContent = cart.toString();
-        getOrderContent(orderContent);
-        // TODO : figure out logic (need to save?)
-        return "redirect:checkout";
-    }
+//    @GetMapping("/cart/order")
+//    public String createOrder(Cart cart){
+//        String orderContent = cart.toString();
+//        getOrderContent(orderContent);
+//        // TODO : figure out logic (need to save?)
+//        return "redirect:checkout";
+//    }
 
 }
