@@ -14,10 +14,12 @@ public class Cart {
     protected static final List<Product> cartContent = new ArrayList<>();
     protected static BigDecimal totalPrice;
 
+
     // Constructor
     public Cart() {
         // Not empty
     }
+
 
     /**
      * ADD item to cart
@@ -46,7 +48,7 @@ public class Cart {
     // TODO : optional - make methods to write/load cartContent to local file (in absence of user DB)
     //  and find price for each product again to add to totalPrice. ^^
 
-    // Getters
+    // Only getters
     public List<Product> getCartContent() {
         return cartContent;
     }

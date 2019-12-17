@@ -8,6 +8,10 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
+/**
+ * PRODUCT MODEL
+ * @author Egven
+ */
 @Entity
 public class Product {
 
@@ -24,54 +28,35 @@ public class Product {
     private String productCategorie;
     private String productImagePath;
 
+
+    // Constructor
     public Product() {
+        // Not empty
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    // Getters & Setters
+    public int getId() { return id; }
 
-    public String getNaam() {
-        return naam;
-    }
+    public void setId(int id) { this.id = id; }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
+    public String getNaam() { return naam; }
 
-    public String getBeschrijving() {
-        return beschrijving;
-    }
+    public void setNaam(String naam) { this.naam = naam; }
 
-    public void setBeschrijving(String beschrijving) {
-        this.beschrijving = beschrijving;
-    }
+    public String getBeschrijving() { return beschrijving; }
 
-    public BigDecimal getPrijs() {
-        return prijs;
-    }
+    public void setBeschrijving(String beschrijving) { this.beschrijving = beschrijving; }
 
-    public void setPrijs(BigDecimal prijs) {
-        this.prijs = prijs;
-    }
+    public BigDecimal getPrijs() { return prijs; }
 
-    public String getProductCategorie() {
-        return productCategorie;
-    }
+    public void setPrijs(BigDecimal prijs) { this.prijs = prijs; }
 
-    public void setProductCategorie(String productCategorie) {
-        this.productCategorie = productCategorie;
-    }
+    public String getProductCategorie() { return productCategorie; }
 
-    public String getProductImagePath() {
-        return productImagePath;
-    }
+    public void setProductCategorie(String productCategorie) { this.productCategorie = productCategorie; }
 
-    public void setProductImagePath(String productImagePath) {
-        this.productImagePath = productImagePath;
-    }
+    public String getProductImagePath() { return productImagePath; }
+
+    public void setProductImagePath(String productImagePath) { this.productImagePath = productImagePath; }
 }

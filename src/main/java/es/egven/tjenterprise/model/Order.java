@@ -1,12 +1,11 @@
 package es.egven.tjenterprise.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 /**
  * ORDER MODEL
- * @author dog.D
+ * @author Egven
  */
 @Entity
 @Table(name = "orders")
@@ -22,8 +21,10 @@ public class Order {
     @NotEmpty(message ="{blank_error}")
     private String deliveryAddress;
 
+
     // Constructor
     public Order() {
+        // Not empty
     }
 
 
