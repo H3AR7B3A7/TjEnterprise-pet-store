@@ -8,15 +8,15 @@ import javax.validation.constraints.NotEmpty;
  * @author dog.D
  */
 @Entity
-@Table(name = "orders")
+@Table()
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
 
     @NotEmpty
-    private String orderContent;
+    private static String orderContent;
 
 
     // Constructor
@@ -25,7 +25,7 @@ public class Order {
 
 
     // Getters & Setters
-    public String getOrderContent(String s) { return orderContent; }
+    public static String getOrderContent(String s) { return orderContent; }
 
     public void setOrderContent(String orderContent) { this.orderContent = orderContent; }
 

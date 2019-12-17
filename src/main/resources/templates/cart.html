@@ -21,17 +21,17 @@
                     <tr>
                         <th>Name</th>
                         <th>Price</th>
-                        <th></th>
+                        <!--<th></th>-->
                     </tr>
                     </thead>
                     <tbody>
                     <!--  TODO : find out how to model cart and/or where to create it-->
-                    <tr th:each="cartContent : ${nCart}">
-                        <td th:text="${nCart.getCartContent()}"></td>
-                        <td th:text="${nCart.getTotalPrice()}"></td>
-                        <td>
+                    <tr th:each="nProduct : ${nCart.cartContent}">
+                        <td th:text="*{nProduct.naam}"></td>
+                        <td th:text="*{nProduct.prijs}"></td>
+                        <!--<td>
                             <a class="btn" th:href="|@{nCart.removeItemFromCart(*{product.getNaam}, *{product.getPrijs})}|" onclick="return confirm('Are you sure?')">x</a>
-                        </td>
+                        </td>-->
                     </tr>
                     </tbody>
                 </table>
@@ -70,7 +70,7 @@
             </div>
             <!-- SUBMIT ORDER BUTTON  -->
             <div class="text-center padding">
-                <form method="get" action="/cart/order">
+                <form method="post" th:action="@{/cart/order}">
                     <button type="submit" class="btn">Place Order</button>
                 </form>
             </div>
