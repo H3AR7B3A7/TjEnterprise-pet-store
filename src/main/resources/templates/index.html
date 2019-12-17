@@ -5,6 +5,28 @@
 <head th:replace="~{fragments/head::head}"></head>
 <!--  PAGE  -->
 <body>
+    <h1>Webshop TJEnterprise</h1>
+    <div class="container-fluid">
+            <table id="tablewrapper">
+                <thead>
+                    <tr>
+                        <th>Naam</th>
+                        <th>Prijs</th>
+                        <th>Beschrijving</th>
+                        <th>Categorie</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tr th:each="product : ${allProducts}">
+                    <td th:text="*{product.naam}"></td>
+                    <td th:text="*{product.prijs}"></td>
+                    <td th:text="*{product.beschrijving}"></td>
+                    <td th:text="*{product.productCategorie}"></td>
+                    <td><img th:src="|@{*{product.productImagePath}}|" alt="hondenKauwBeen"></td>
+                </tr>
+            </table>
+
+    </div>
 
 </body>
 </html>

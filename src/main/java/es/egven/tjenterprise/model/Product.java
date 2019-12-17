@@ -21,6 +21,8 @@ public class Product {
     @NotBlank()
     @DecimalMin("1.00")
     private BigDecimal prijs;
+    private String productCategorie;
+    private String productImagePath;
 
     public Product() {
     }
@@ -55,5 +57,21 @@ public class Product {
 
     public void setPrijs(BigDecimal prijs) {
         this.prijs = prijs;
+    }
+
+    public String getProductCategorie() {
+        return productCategorie;
+    }
+
+    public void setProductCategorie(String productCategorie) {
+        this.productCategorie = productCategorie;
+    }
+
+    public String getProductImagePath() {
+        return productImagePath;
+    }
+
+    public void setProductImagePath(String productImagePath) {
+        this.productImagePath = productImagePath;
     }
 }
