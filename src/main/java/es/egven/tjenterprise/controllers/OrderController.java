@@ -24,6 +24,11 @@ public class OrderController {
     private OrderDAO dao;
 
 
+    @ModelAttribute("nCart")
+    public Cart winkelKarAanmaken() {
+        return new Cart();
+    }
+
     /**
      * Create a NEW order
      * @return new Order
@@ -39,10 +44,11 @@ public class OrderController {
      * @param bindingResult
      * @return cart again, or checkout page
      */
-    @PostMapping(value = "/cart/checkout")
+    @PostMapping(value = "/cart")
     public String saveOrder(@ModelAttribute("nOrder") @Valid Order nOrder, BindingResult bindingResult){
-        if (bindingResult.hasErrors())
+        if (bindingResult.hasErrors()) {
             return "cart";
+        }
         dao.save(nOrder);
         return "redirect:/checkout";
     }
@@ -52,10 +58,10 @@ public class OrderController {
      * @param map
      * @return Checkout page
      */
-    @GetMapping(value = "/cart/checkout")
+    @GetMapping(value = "/cart")
     public String showCheckout(ModelMap map){
         map.addAttribute("checkout",new Order());
-        return "checkout";
+        return "cart";
     }
 
 

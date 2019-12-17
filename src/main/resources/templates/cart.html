@@ -41,24 +41,13 @@
                 <h4 th:text="#{form_subtitle}"></h4>
                 <form th:action="@{~/cart/checkout}" method="post" th:object="${nOrder}">
                     <div class="text-input">
-                        <label for="id" class="fieldLabel" th:text="#{lbl_orderId}"></label>
-                        <span th:if="${#fields.hasErrors('orderId')}" th:errors="*{orderId}" class="error"></span>
-                        <input type="text" th:field="*{orderId}" id="id">
-                    </div>
-                    <div class="text-input">
-                        <label for="orderContent" class="fieldLabel" th:text="#{lbl_orderContent}"></label>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{orderContent}" class="error"></span>
-                        <textarea th:field="*{orderContent}" id="orderContent"></textarea>
-                    </div>
-                    <div class="text-input">
                         <label for="deliveryAddress" class="fieldLabel" th:text="#{lbl_deliveryAddress}"></label>
-                        <span th:if="${#fields.hasErrors('contact')}" th:errors="*{deliveryAddress}" class="error"></span>
-                        <input th:field="*{deliveryAddress}" id="deliveryAddress">
+                        <span th:if="${#fields.hasErrors('deliveryAddress')}" th:errors="*{deliveryAddress}" class="error"></span>
+                        <input type="text" th:field="*{deliveryAddress}" id="deliveryAddress">
                     </div>
-                    <input type="submit" class="btn" th:value="#{btn_send}">
                     <!-- SUBMIT ORDER BUTTON  -->
                     <div class="text-center padding">
-                        <button type="submit" class="btn">Place Order</button>
+                        <input type="submit" class="btn">Place Order</input>
                     </div>
                 </form>
             </div>

@@ -1,6 +1,7 @@
 package es.egven.tjenterprise.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 /**
@@ -18,6 +19,7 @@ public class Order {
     @NotEmpty
     private static String orderContent;
 
+    @NotBlank(message = "Mag niet leeg zijn")
     private String deliveryAddress;
 
     // Constructor
