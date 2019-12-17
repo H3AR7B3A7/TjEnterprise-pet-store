@@ -1,7 +1,12 @@
 $(document).ready(
     function () {
+        $('#productTable').DataTable({
+            "searching": true,
+            "lengthChange": false,
+            "pagingType": "full_numbers"
+        });
         $('#cartTable').DataTable({
-            "search": false,
+            "searching": false,
             "lengthChange": false,
             "pagingType": "full_numbers"
         });
