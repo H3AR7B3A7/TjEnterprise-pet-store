@@ -39,7 +39,7 @@
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid">
                 <h4 th:text="#{form_subtitle}"></h4>
-                <form th:action="@{~/cart}" method="post" th:object="${nOrder}">
+                <form th:action="@{~/cart/checkout}" method="post" th:object="${nOrder}">
                     <div class="text-input">
                         <label for="id" class="fieldLabel" th:text="#{lbl_orderId}"></label>
                         <span th:if="${#fields.hasErrors('orderId')}" th:errors="*{orderId}" class="error"></span>

@@ -35,7 +35,7 @@ public class OrderController {
     /**
      * Add values to newly created Order
      */
-    @PostMapping(value = "/cart")
+    @PostMapping(value = "/cart/checkout")
     public String saveOrder(@ModelAttribute("nOrder") @Valid Order nOrder, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             return "cart";
