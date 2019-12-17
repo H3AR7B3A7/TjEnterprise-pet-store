@@ -42,13 +42,13 @@
                 <form th:action="@{~/products/form}" method="post" th:object="${nProduct}">
                     <div class="text-input">
                         <label for="productName" class="fieldLabel" th:text="#{lbl_productName}"></label>
-                        <span th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}" class="error"></span>
-                        <input type="text" th:field="*{productName}" id="productName">
+                        <span th:if="${#fields.hasErrors('productName')}" th:errors="*{naam}" class="error"></span>
+                        <input type="text" th:field="*{naam}" id="productName">
                     </div>
                     <div class="text-input">
                         <label for="description" class="fieldLabel" th:text="#{lbl_description}"></label>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error"></span>
-                        <textarea th:field="*{description}" id="description"></textarea>
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{beschrijving}" class="error"></span>
+                        <textarea th:field="*{beschrijving}" id="description"></textarea>
                     </div>
                     <div class="text-input">
                         <label for="contact" class="fieldLabel" th:text="#{lbl_contact}"></label>

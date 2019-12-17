@@ -18,6 +18,7 @@ public class Order {
     @NotEmpty
     private static String orderContent;
 
+    private String deliveryAddress;
 
     // Constructor
     public Order() {
@@ -25,7 +26,12 @@ public class Order {
 
 
     // Getters & Setters
-    public static String getOrderContent(String s) { return orderContent; }
+
+    public static String getOrderContent() { return orderContent; }
+
+    public String getDeliveryAddress() { return deliveryAddress; }
+
+    public void setDeliveryAddress(String deliveryAddress) { this.deliveryAddress = deliveryAddress; }
 
     public void setOrderContent(String orderContent) { this.orderContent = orderContent; }
 
