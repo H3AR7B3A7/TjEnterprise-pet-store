@@ -39,39 +39,16 @@
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid">
                 <h4 th:text="#{form_subtitle}"></h4>
-                <form th:action="@{~/products/form}" method="post" th:object="${nProduct}">
+                <form th:action="@{~/cart/checkout}" method="post" th:object="${nOrder}">
                     <div class="text-input">
-                        <label for="productName" class="fieldLabel" th:text="#{lbl_productName}"></label>
-                        <span th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}" class="error"></span>
-                        <input type="text" th:field="*{productName}" id="productName">
+                        <label for="deliveryAddress" class="fieldLabel" th:text="#{lbl_deliveryAddress}"></label>
+                        <span th:if="${#fields.hasErrors('deliveryAddress')}" th:errors="*{deliveryAddress}" class="error"></span>
+                        <input type="text" th:field="*{deliveryAddress}" id="deliveryAddress">
                     </div>
-                    <div class="text-input">
-                        <label for="description" class="fieldLabel" th:text="#{lbl_description}"></label>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error"></span>
-                        <textarea th:field="*{description}" id="description"></textarea>
+                    <!-- SUBMIT ORDER BUTTON  -->
+                    <div class="text-center padding">
+                        <input type="submit" class="btn">Place Order</input>
                     </div>
-                    <div class="text-input">
-                        <label for="contact" class="fieldLabel" th:text="#{lbl_contact}"></label>
-                        <span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}" class="error"></span>
-                        <input th:field="*{contact}" id="contact">
-                    </div>
-                    <div class="text-input">
-                        <label for="price" class="fieldLabel" th:text="#{lbl_price}"></label>
-                        <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></span>
-                        <input th:field="*{price}" id="price">
-                    </div>
-                    <div class="text-input">
-                        <label for="contactMail" class="fieldLabel" th:text="#{lbl_contactMail}"></label>
-                        <span th:if="${#fields.hasErrors('contactMail')}" th:errors="*{contactMail}" class="error"></span>
-                        <input th:field="*{contactMail}" id="contactMail">
-                    </div>
-                    <input type="submit" class="btn" th:value="#{btn_send}">
-                </form>
-            </div>
-            <!-- SUBMIT ORDER BUTTON  -->
-            <div class="text-center padding">
-                <form method="post" th:action="@{/cart/order}">
-                    <button type="submit" class="btn">Place Order</button>
                 </form>
             </div>
         </div>

@@ -1,6 +1,7 @@
 package es.egven.tjenterprise.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 /**
@@ -18,6 +19,8 @@ public class Order {
     @NotEmpty
     private static String orderContent;
 
+    @NotBlank(message = "Mag niet leeg zijn")
+    private String deliveryAddress;
 
     // Constructor
     public Order() {
@@ -25,7 +28,12 @@ public class Order {
 
 
     // Getters & Setters
-    public static String getOrderContent(String s) { return orderContent; }
+
+    public static String getOrderContent() { return orderContent; }
+
+    public String getDeliveryAddress() { return deliveryAddress; }
+
+    public void setDeliveryAddress(String deliveryAddress) { this.deliveryAddress = deliveryAddress; }
 
     public void setOrderContent(String orderContent) { this.orderContent = orderContent; }
 
