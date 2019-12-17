@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
  * @author dog.D
  */
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id
