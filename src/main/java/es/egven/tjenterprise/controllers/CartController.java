@@ -2,6 +2,8 @@ package es.egven.tjenterprise.controllers;
 
 import es.egven.tjenterprise.model.Cart;
 import es.egven.tjenterprise.model.Product;
+import es.egven.tjenterprise.model.ProductDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ import java.util.HashMap;
 @Controller
 public class CartController {
 
+    @Autowired
+    ProductDAO dao;
+
     @ModelAttribute("nCart")
     public Cart winkelKarAanmaken() {
         return new Cart();
@@ -29,7 +34,7 @@ public class CartController {
     @GetMapping(value = "/cart")
     public String showCart(ModelMap map){
         return "cart";
-    }
+    }*/
 
     @ModelAttribute("nProduct")
     public Product productToAdd(){
