@@ -19,13 +19,21 @@
 
 /* INDEX STYLING */
 
+h1{
+    color: teal;
+}
+
+h4{
+
+}
+
 .row{
     text-align: center;
     /*don't use float, or footer will break*/
     /*float: right;*/
     /*and add a div, in row, with whole page content to make place for filter*/
     /*don't set width to 80%*/
-    /*sorry for this ^^*/
+    /*sorry for this ^^ but see it as an example, not my rule*/
 }
 
 /*Fixed card size*/
