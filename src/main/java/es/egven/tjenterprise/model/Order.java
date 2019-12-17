@@ -16,10 +16,10 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
 
-    @NotEmpty
+    @NotEmpty(message ="{blank_error}")
     private static String orderContent;
 
-    @NotBlank(message = "Mag niet leeg zijn")
+    @NotEmpty(message ="{blank_error}")
     private String deliveryAddress;
 
     // Constructor
