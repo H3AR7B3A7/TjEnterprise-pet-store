@@ -5,28 +5,31 @@
 <head th:replace="~{fragments/head::head}"></head>
 <!--  PAGE  -->
 <body>
-    <h1>Webshop TJEnterprise</h1>
-    <div class="container-fluid">
-            <table id="tablewrapper">
-                <thead>
-                    <tr>
-                        <th>Naam</th>
-                        <th>Prijs</th>
-                        <th>Beschrijving</th>
-                        <th>Categorie</th>
-                        <th>Foto</th>
-                    </tr>
-                </thead>
-                <tr th:each="product : ${allProducts}">
-                    <td th:text="*{product.naam}"></td>
-                    <td th:text="*{product.prijs}"></td>
-                    <td th:text="*{product.beschrijving}"></td>
-                    <td th:text="*{product.productCategorie}"></td>
-                    <td><img th:src="|@{*{product.productImagePath}}|" alt="hondenKauwBeen"></td>
-                </tr>
-            </table>
+<div id="page-container">
+    <div id="content-wrap">
+        <!--  NAV  -->
+        <nav th:replace="~{fragments/nav::nav(contact)}"></nav>
 
+        <!-- Table to show product as  cards-->
+        <div class="container-fluid padding">
+            <div class="row padding">
+                <div class="col-md-4" th:each="product : ${allProducts}">
+                    <div class="card" >
+                        <img th:src="|@{*{product.productImagePath}}|" alt="hondenKauwBeen">
+                        <div class="card-body">
+                            <h4 class="card-title" th:text="*{product.naam}"></h4>
+                            <p class="card-price" th:text="*{product.prijs}"></p>
+                            <p class="card-text" th:text="*{product.beschrijving}"></p>
+                            <p th:text="*{product.productCategorie}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!--  FOOTER  -->
+    <footer th:replace="~{fragments/footer::footer}"></footer>
+</div>
 </body>
 </html>
