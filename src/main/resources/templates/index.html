@@ -13,7 +13,7 @@
         <!-- Table to show product as  cards-->
         <div class="container-fluid padding">
             <div class="row padding">
-                <div class="col-md-4" th:each="product : ${allProducts}">
+                <div class="col-md-3" th:each="product : ${allProducts}">
                     <div class="card" >
                         <img th:src="|@{*{product.productImagePath}}|" alt="hondenKauwBeen">
                         <div class="card-body">
