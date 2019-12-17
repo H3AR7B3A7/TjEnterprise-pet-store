@@ -1,10 +1,12 @@
 package es.egven.tjenterprise.controllers;
 
 import es.egven.tjenterprise.model.Cart;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -25,6 +27,12 @@ public class CartController {
     public Cart createNewCart(){
         return new Cart(new HashMap<>(), new BigDecimal(0));
     }
+
+    @PostMapping(value = "/add")
+    ResponseEntity addProductToCart(){
+
+    }
+
 
     @GetMapping
     public Cart getCart(){
