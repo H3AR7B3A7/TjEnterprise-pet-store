@@ -10,12 +10,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import javax.validation.Valid;
 
 /**
  * ORDER CONTROLLER
- * @author dog.D
+ * @author Egven
  */
 @Controller
 public class OrderController {
@@ -23,9 +22,12 @@ public class OrderController {
     @Autowired
     private OrderDAO dao;
 
-
+    /**
+     * Model attribute for Cart
+     * @return Cart()
+     */
     @ModelAttribute("nCart")
-    public Cart winkelKarAanmaken() {
+    public Cart createNewCart() {
         return new Cart();
     }
 
@@ -46,9 +48,8 @@ public class OrderController {
      */
     @PostMapping(value = "/cart")
     public String saveOrder(@ModelAttribute("nOrder") @Valid Order nOrder, BindingResult bindingResult){
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors())
             return "cart";
-        }
         dao.save(nOrder);
         return "redirect:/checkout";
     }
@@ -63,7 +64,4 @@ public class OrderController {
         map.addAttribute("checkout",new Order());
         return "cart";
     }
-
-
-
 }

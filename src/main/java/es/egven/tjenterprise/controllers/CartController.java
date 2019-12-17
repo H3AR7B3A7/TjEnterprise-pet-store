@@ -7,25 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-
 /**
  * CART CONTROLLER
- * @author d.Dog
+ * @author Egven
  */
 @Controller
 public class CartController {
 
     @Autowired
     ProductDAO dao;
-
-    /**
-     * Model attribute for Cart
-     * @return Cart()
-     */
-    @ModelAttribute("nCart")
-    public Cart createNewCart() {
-        return new Cart();
-    }
 
     /**
      * Model attribute for Product
