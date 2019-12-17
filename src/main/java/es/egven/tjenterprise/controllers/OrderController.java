@@ -22,18 +22,6 @@ public class OrderController {
     @Autowired
     private OrderDAO dao;
 
-    /**
-     * Create NEW order with cart content
-     * @param cart
-     * @return checkout page
-     */
-    @GetMapping("/cart/order")
-    public String createOrder(Cart cart){
-        String orderContent = cart.toString();
-        Order.getOrderContent(orderContent);
-        // TODO : figure out logic (need to save?)
-        return "redirect:checkout";
-    }
 
     /**
      * Create a NEW order
@@ -47,10 +35,10 @@ public class OrderController {
     /**
      * Add values to newly created Order
      */
-    @PostMapping(value = {"/index", ""})
+    @PostMapping(value = "/cart")
     public String saveOrder(@ModelAttribute("nOrder") @Valid Order nOrder, BindingResult bindingResult){
         if (bindingResult.hasErrors())
-            return "index";
+            return "cart";
         dao.save(nOrder);
         return "redirect:/checkout";
     }
