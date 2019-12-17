@@ -2,24 +2,21 @@ package es.egven.tjenterprise.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 /**
  * CART MODEL
- * @author dog.D
+ * @author Egven
  */
 public class Cart {
 
-    // Fields
-    public static ArrayList<Product> cartContent = new ArrayList<>();
-    private static BigDecimal totalPrice;
-
+    // Fields - ps: Made these protected and list final
+    protected static final List<Product> cartContent = new ArrayList<>();
+    protected static BigDecimal totalPrice;
 
     // Constructor
-
-
-
     public Cart() {
+        // Not empty
     }
 
     /**
@@ -27,34 +24,30 @@ public class Cart {
      */
     public static void addItemToCart(Product product){
         cartContent.add(product);
-        /*BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
-        BigDecimal toBeAdded = new BigDecimal(String.valueOf(b));
-        totalPrice = new BigDecimal(String.valueOf(currentTotal.add(toBeAdded)));*/
+//        totalPrice = totalPrice.add(product.getPrijs());
     }
 
     /**
      * REMOVE item from cart
      */
-    /*public void removeItemFromCart(String s, BigDecimal b){
-        cartContent.remove(s, b);
-        BigDecimal currentTotal = new BigDecimal(String.valueOf(totalPrice));
-        BigDecimal toBeSubtracted = new BigDecimal(String.valueOf(b));
-        totalPrice = new BigDecimal(String.valueOf(currentTotal.subtract(toBeSubtracted)));
-    }*/
+    public static void removeItemFromCart(Product product) {
+        cartContent.remove(product);
+//        totalPrice = totalPrice.subtract(product.getPrijs());
+    }
 
     /**
      * CLEAR all items from cart
      */
-    public void clearCart(){
+    public static void clearCart(){
         cartContent.clear();
-        totalPrice = new BigDecimal(0);
+//        totalPrice = new BigDecimal(0);
     }
 
     // TODO : optional - make methods to write/load cartContent to local file (in absence of user DB)
     //  and find price for each product again to add to totalPrice. ^^
 
     // Getters
-    public ArrayList<Product> getCartContent() {
+    public List<Product> getCartContent() {
         return cartContent;
     }
 
@@ -65,7 +58,7 @@ public class Cart {
 
     /**
      * ToString Method to make Order
-     * @return Order/cartContent in string
+     * @return Order/cartContent in Json
      */
     @Override
     public String toString() {
