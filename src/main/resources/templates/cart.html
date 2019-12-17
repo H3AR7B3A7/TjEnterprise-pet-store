@@ -56,12 +56,10 @@
                         <input th:field="*{deliveryAddress}" id="deliveryAddress">
                     </div>
                     <input type="submit" class="btn" th:value="#{btn_send}">
-                </form>
-            </div>
-            <!-- SUBMIT ORDER BUTTON  -->
-            <div class="text-center padding">
-                <form method="post" th:action="@{/cart/order}">
-                    <button type="submit" class="btn">Place Order</button>
+                    <!-- SUBMIT ORDER BUTTON  -->
+                    <div class="text-center padding">
+                        <button type="submit" class="btn">Place Order</button>
+                    </div>
                 </form>
             </div>
         </div>
