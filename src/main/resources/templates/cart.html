@@ -39,31 +39,21 @@
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid">
                 <h4 th:text="#{form_subtitle}"></h4>
-                <form th:action="@{~/products/form}" method="post" th:object="${nProduct}">
+                <form th:action="@{~/cart}" method="post" th:object="${nOrder}">
                     <div class="text-input">
-                        <label for="productName" class="fieldLabel" th:text="#{lbl_productName}"></label>
-                        <span th:if="${#fields.hasErrors('productName')}" th:errors="*{naam}" class="error"></span>
-                        <input type="text" th:field="*{naam}" id="productName">
+                        <label for="id" class="fieldLabel" th:text="#{lbl_orderId}"></label>
+                        <span th:if="${#fields.hasErrors('orderId')}" th:errors="*{orderId}" class="error"></span>
+                        <input type="text" th:field="*{orderId}" id="id">
                     </div>
                     <div class="text-input">
-                        <label for="description" class="fieldLabel" th:text="#{lbl_description}"></label>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{beschrijving}" class="error"></span>
-                        <textarea th:field="*{beschrijving}" id="description"></textarea>
+                        <label for="orderContent" class="fieldLabel" th:text="#{lbl_orderContent}"></label>
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{orderContent}" class="error"></span>
+                        <textarea th:field="*{orderContent}" id="orderContent"></textarea>
                     </div>
                     <div class="text-input">
-                        <label for="contact" class="fieldLabel" th:text="#{lbl_contact}"></label>
-                        <span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}" class="error"></span>
-                        <input th:field="*{contact}" id="contact">
-                    </div>
-                    <div class="text-input">
-                        <label for="price" class="fieldLabel" th:text="#{lbl_price}"></label>
-                        <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></span>
-                        <input th:field="*{price}" id="price">
-                    </div>
-                    <div class="text-input">
-                        <label for="contactMail" class="fieldLabel" th:text="#{lbl_contactMail}"></label>
-                        <span th:if="${#fields.hasErrors('contactMail')}" th:errors="*{contactMail}" class="error"></span>
-                        <input th:field="*{contactMail}" id="contactMail">
+                        <label for="deliveryAddress" class="fieldLabel" th:text="#{lbl_deliveryAddress}"></label>
+                        <span th:if="${#fields.hasErrors('contact')}" th:errors="*{deliveryAddress}" class="error"></span>
+                        <input th:field="*{deliveryAddress}" id="deliveryAddress">
                     </div>
                     <input type="submit" class="btn" th:value="#{btn_send}">
                 </form>
