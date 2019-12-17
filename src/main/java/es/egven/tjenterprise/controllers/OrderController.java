@@ -5,6 +5,7 @@ import es.egven.tjenterprise.model.Order;
 import es.egven.tjenterprise.model.OrderDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -34,6 +35,9 @@ public class OrderController {
 
     /**
      * Add values to newly created Order
+     * @param nOrder
+     * @param bindingResult
+     * @return cart again, or checkout page
      */
     @PostMapping(value = "/cart/checkout")
     public String saveOrder(@ModelAttribute("nOrder") @Valid Order nOrder, BindingResult bindingResult){
@@ -41,6 +45,17 @@ public class OrderController {
             return "cart";
         dao.save(nOrder);
         return "redirect:/checkout";
+    }
+
+    /**
+     * Mapping for checkout page
+     * @param map
+     * @return Checkout page
+     */
+    @GetMapping(value = "/cart/checkout")
+    public String showCheckout(ModelMap map){
+        map.addAttribute("checkout",new Order());
+        return "checkout";
     }
 
 
