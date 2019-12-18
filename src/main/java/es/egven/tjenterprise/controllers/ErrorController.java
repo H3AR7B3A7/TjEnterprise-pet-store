@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * ERROR CONTROLLER
  *
- * @author d.Dog
+ * @author Egven
  */
 @Controller
 public class ErrorController implements org.springframework.boot.web.servlet.error.ErrorController {

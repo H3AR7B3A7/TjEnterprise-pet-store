@@ -10,6 +10,12 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+/**
+ * TJ.enterprise
+ * Petstore - web shop
+ * @author Egven
+ * @version 0.0.1
+ */
 @SpringBootApplication
 @EntityScan(basePackages = "es.egven.tjenterprise.model")
 @ComponentScan(basePackages = "es.egven.tjenterprise.controllers")
