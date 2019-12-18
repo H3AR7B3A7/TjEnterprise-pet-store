@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int orderId;
 
     @NotEmpty(message ="{blank_error}")

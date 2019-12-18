@@ -50,7 +50,7 @@ public class OrderController {
         if (bindingResult.hasErrors())
             return "cart";
         dao.save(nOrder);
-        return "redirect:/checkout";
+        return "redirect:/cart/checkout";
     }
 
     /**

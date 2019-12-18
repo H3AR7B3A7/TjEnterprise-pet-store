@@ -45,15 +45,15 @@ public class CartController {
         }
     }
 
-    @GetMapping(value = "/del{id}")
+    @GetMapping(value = "/cart/del{id}")
     public String removeProductFromCart(@PathVariable(value = "id") int id){
         // TODO : Find a specific product in list to delete it
-        return "redirect:/index";
+        return "redirect:/cart";
     }
 
-    @GetMapping(value = "/del")
+    @GetMapping(value = "/cart/del")
     public String clearCart(){
         // TODO : Find a way to clear list
-        return "redirect:/index";
+        return "redirect:/cart";
     }
 }
