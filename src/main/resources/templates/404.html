@@ -10,9 +10,12 @@
         <!--  NAV  -->
         <nav th:replace="~{fragments/nav::nav(products)}"></nav>
         <!-- CONTENT  -->
-        <div class="container-fluid padding">
-            <div class="text-center padding">
+        <div class="container-fluid padding text-center">
+            <div class="padding">
                 <h1>404</h1>
+            </div>
+            <div>
+                <img id="error404" th:src="@{~/img/404.jpg}" alt="404">
             </div>
         </div>
     </div>
