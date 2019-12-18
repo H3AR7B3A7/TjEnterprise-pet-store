@@ -85,6 +85,15 @@ h4{
 /*404 PAGE STYLING*/
 
 #error404{
-    height: 20rem;
+    height: 22rem;
     width: auto;
+}
+
+/*MOBILE STYLING*/
+
+@media (max-width: 576px) {
+    #error404 {
+        height: 17rem;
+        width: auto;
+    }
 }
