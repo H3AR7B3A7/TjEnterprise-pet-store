@@ -72,3 +72,11 @@ h4{
 .addBtn{
     text-align: right !important;
 }
+
+/*FORM STYLING*/
+
+.error{
+    color: red;
+    font-size: 1.1em;
+    font-weight: bolder;
+}

@@ -40,7 +40,7 @@
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid">
                 <h4 th:text="#{form_subtitle}"></h4>
-                <form th:action="@{~/cart/checkout}" method="get" th:object="${nOrder}">
+                <form th:action="@{~/cart}" method="post" th:object="${nOrder}">
                     <div class="text-input">
                         <label for="customerName" class="fieldLabel" th:text="#{lbl_customerName}"></label>
                         <input type="text" th:field="*{customerName}" id="customerName">
