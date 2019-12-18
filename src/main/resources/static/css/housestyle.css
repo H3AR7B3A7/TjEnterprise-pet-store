@@ -131,7 +131,7 @@ a:hover{
     padding: 3rem;
 }
 
-/*-- TODO : fix .card img height not resizing in CHROME --*/
+/*Commented out to handle manually*/
 /*.card img{*/
 /*    height: auto !important;*/
 /*}*/
@@ -330,7 +330,6 @@ figure {
 
 /*-- Known IE issue with fixed backgrounds - fixes not fully working--*/
 /*-- @Supports not yet in firefox for carousel issue above --*/
-/*TODO : find better background bug fixes for IE*/
 /*-- Edge fixed background bug fix --*/
 @supports ( -ms-accelerator:true ) {
     html{

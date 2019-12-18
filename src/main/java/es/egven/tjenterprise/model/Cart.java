@@ -45,7 +45,7 @@ public class Cart {
 //        totalPrice = new BigDecimal(0);
     }
 
-    // TODO : optional - make methods to write/load cartContent to local file (in absence of user DB)
+    // TODO : Optional - Make methods to write/load cartContent to local file (in absence of user DB)
     //  and find price for each product again to add to totalPrice. ^^
 
     // Only getters
