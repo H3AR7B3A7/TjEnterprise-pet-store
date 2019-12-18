@@ -76,14 +76,35 @@ h4{
 
 /*FORM STYLING*/
 
+#orderForm{
+    width: auto;
+}
+
 .fieldLabel{
-    width: 6rem;
+    width: 5rem;
+    text-align: left;
+}
+
+.orderInputFields{
+    width: 15rem;
 }
 
 .error{
     color: red;
     font-size: 1.1em;
     font-weight: bolder;
+}
+
+#text-input-span{
+    width: 50%;
+}
+
+#errorSpans{
+    width: 50%;
+}
+
+.errorSpan{
+    height: 2.3rem;
 }
 
 /*404 PAGE STYLING*/
@@ -94,6 +115,16 @@ h4{
 }
 
 /*MOBILE STYLING*/
+
+@media (max-width: 768px) {
+    #text-input-span{
+        width: 100%;
+    }
+
+    #errorSpans{
+        width: 100%;
+    }
+}
 
 @media (max-width: 576px) {
     #error404 {

@@ -39,28 +39,42 @@
                 </table>
             </div>
             <!-- ORDER FORM  -->
-            <div class="formWrapper container-fluid">
+            <div class="formWrapper container-fluid text-center">
                 <h4 th:text="#{form_subtitle}"></h4>
-                <form th:action="@{~/cart}" method="post" th:object="${nOrder}">
-                    <div class="text-input">
-                        <label for="customerName" class="fieldLabel" th:text="#{lbl_customerName}"></label>
-                        <input type="text" th:field="*{customerName}" id="customerName">
-                        <span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="error"></span>
-                    </div>
-                    <div class="text-input">
-                        <label for="streetName" class="fieldLabel" th:text="#{lbl_streetName}"></label>
-                        <input type="text" th:field="*{streetName}" id="streetName">
-                        <span th:if="${#fields.hasErrors('streetName')}" th:errors="*{streetName}" class="error"></span>
-                    </div>
-                    <div class="text-input">
-                        <label for="streetNumber" class="fieldLabel" th:text="#{lbl_streetNumber}"></label>
-                        <input type="text" th:field="*{streetNumber}" id="streetNumber">
-                        <span th:if="${#fields.hasErrors('streetNumber')}" th:errors="*{streetNumber}" class="error"></span>
-                    </div>
-                    <div class="text-input">
-                        <label for="mailAddress" class="fieldLabel" th:text="#{lbl_mailAddress}"></label>
-                        <input type="text" th:field="*{mailAddress}" id="mailAddress">
-                        <span th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}" class="error"></span>
+                <form id="orderForm" th:action="@{~/cart}" method="post" th:object="${nOrder}">
+                    <div class="row">
+                        <div id="text-input-span">
+                            <div class="text-input">
+                                <label for="customerName" class="fieldLabel" th:text="#{lbl_customerName}"></label>
+                                <input class="orderInputFields" type="text" th:field="*{customerName}" id="customerName">
+                            </div>
+                            <div class="text-input">
+                                <label for="streetName" class="fieldLabel" th:text="#{lbl_streetName}"></label>
+                                <input class="orderInputFields" type="text" th:field="*{streetName}" id="streetName">
+                            </div>
+                            <div class="text-input">
+                                <label for="streetNumber" class="fieldLabel" th:text="#{lbl_streetNumber}"></label>
+                                <input class="orderInputFields" type="text" th:field="*{streetNumber}" id="streetNumber">
+                            </div>
+                            <div class="text-input">
+                                <label for="mailAddress" class="fieldLabel" th:text="#{lbl_mailAddress}"></label>
+                                <input class="orderInputFields" type="text" th:field="*{mailAddress}" id="mailAddress">
+                            </div>
+                        </div>
+                        <div id="errorSpans">
+                            <div class="errorSpan">
+                                <span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="error"></span>
+                            </div>
+                            <div class="errorSpan">
+                                <span th:if="${#fields.hasErrors('streetName')}" th:errors="*{streetName}" class="error"></span>
+                            </div>
+                            <div class="errorSpan">
+                                <span th:if="${#fields.hasErrors('streetNumber')}" th:errors="*{streetNumber}" class="error"></span>
+                            </div>
+                            <div class="errorSpan">
+                                <span th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}" class="error"></span>
+                            </div>
+                        </div>
                     </div>
                     <!-- SUBMIT ORDER BUTTON  -->
                     <div class="text-center padding">
