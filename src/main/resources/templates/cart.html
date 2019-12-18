@@ -26,9 +26,10 @@
                     </thead>
                     <tbody>
                     <!--  TODO : Add a delete button , need to find object in list first  -->
-                    <tr th:each="nProduct : ${nCart.cartContent}">
-                        <td th:text="*{nProduct.naam}"></td>
-                        <td th:text="*{nProduct.prijs}"></td>
+                    <tr th:each="i : ${nCart.cartContent}">
+                        <td th:text="*{i.naam}"></td>
+                        <td th:text="*{i.prijs}"></td>
+
 <!--                        <td>-->
 <!--                            <a class="btn" th:href="@{/del}" onclick="return confirm('Are you sure?')">x</a>-->
 <!--                        </td>-->
@@ -39,11 +40,26 @@
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid">
                 <h4 th:text="#{form_subtitle}"></h4>
-                <form th:action="@{~/cart/checkout}" method="post" th:object="${nOrder}">
+                <form th:action="@{~/cart/checkout}" method="get" th:object="${nOrder}">
                     <div class="text-input">
-                        <label for="deliveryAddress" class="fieldLabel" th:text="#{lbl_deliveryAddress}"></label>
-                        <span th:if="${#fields.hasErrors('deliveryAddress')}" th:errors="*{deliveryAddress}" class="error"></span>
-                        <input type="text" th:field="*{deliveryAddress}" id="deliveryAddress">
+                        <label for="customerName" class="fieldLabel" th:text="#{lbl_customerName}"></label>
+                        <input type="text" th:field="*{customerName}" id="customerName">
+                        <span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="error"></span>
+                    </div>
+                    <div class="text-input">
+                        <label for="streetName" class="fieldLabel" th:text="#{lbl_streetName}"></label>
+                        <input type="text" th:field="*{streetName}" id="streetName">
+                        <span th:if="${#fields.hasErrors('streetName')}" th:errors="*{streetName}" class="error"></span>
+                    </div>
+                    <div class="text-input">
+                        <label for="streetNumber" class="fieldLabel" th:text="#{lbl_streetNumber}"></label>
+                        <input type="text" th:field="*{streetNumber}" id="streetNumber">
+                        <span th:if="${#fields.hasErrors('streetNumber')}" th:errors="*{streetNumber}" class="error"></span>
+                    </div>
+                    <div class="text-input">
+                        <label for="mailAddress" class="fieldLabel" th:text="#{lbl_mailAddress}"></label>
+                        <input type="text" th:field="*{mailAddress}" id="mailAddress">
+                        <span th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}" class="error"></span>
                     </div>
                     <!-- SUBMIT ORDER BUTTON  -->
                     <div class="text-center padding">

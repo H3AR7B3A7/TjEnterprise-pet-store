@@ -55,13 +55,11 @@ public class OrderController {
     }
 
     /**
-     * Mapping for checkout page
-     * @param map
+     * Mapping for cart page
      * @return Checkout page
      */
     @GetMapping(value = "/cart")
-    public String showCheckout(ModelMap map){
-        map.addAttribute("checkout",new Order());
+    public String showCart(){
         return "cart";
     }
 }
