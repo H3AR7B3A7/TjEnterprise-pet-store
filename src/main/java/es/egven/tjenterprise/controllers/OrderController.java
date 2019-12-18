@@ -5,7 +5,6 @@ import es.egven.tjenterprise.model.Order;
 import es.egven.tjenterprise.model.OrderDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,8 +31,8 @@ public class OrderController {
     }
 
     /**
-     * Create a NEW order
-     * @return new Order
+     * Model attribute for Order
+     * @return Order()
      */
     @ModelAttribute(value = "nOrder")
     public Order OrderToSave(){
@@ -56,7 +55,7 @@ public class OrderController {
 
     /**
      * Mapping for cart page
-     * @return Checkout page
+     * @return cart page
      */
     @GetMapping(value = "/cart")
     public String showCart(){
