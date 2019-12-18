@@ -1,11 +1,15 @@
 package es.egven.tjenterprise.controllers;
 
+import es.egven.tjenterprise.exceptions.ResourceNotFoundException;
 import es.egven.tjenterprise.model.Cart;
 import es.egven.tjenterprise.model.Product;
 import es.egven.tjenterprise.model.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 /**
  * CART CONTROLLER
@@ -33,8 +37,24 @@ public class CartController {
      */
     @GetMapping(value = "/{id}")
     public String addProductToCart(@PathVariable(value = "id") int id){
-        Product nProduct = dao.findById(id).get();
-        Cart.addItemToCart(nProduct);
+        Optional<Product> optional = dao.findById(id);
+        if(optional.isPresent()){
+            Cart.addItemToCart(optional.get());
+            return "redirect:/index";
+        } else {
+            throw new ResourceNotFoundException();
+        }
+    }
+
+    @GetMapping(value = "/del{id}")
+    public String removeProductFromCart(@PathVariable(value = "id") int id){
+        // TODO : Find a specific product in list to delete it
+        return "redirect:/index";
+    }
+
+    @GetMapping(value = "/del")
+    public String clearCart(){
+        // TODO : Find a way to clear list
         return "redirect:/index";
     }
 }

@@ -25,13 +25,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!--  TODO : find out how to model cart and/or where to create it-->
+                    <!--  TODO : Add a delete button , need to find object in list first  -->
                     <tr th:each="nProduct : ${nCart.cartContent}">
                         <td th:text="*{nProduct.naam}"></td>
                         <td th:text="*{nProduct.prijs}"></td>
-                        <!--<td>
-                            <a class="btn" th:href="|@{nCart.removeItemFromCart(*{product.getNaam}, *{product.getPrijs})}|" onclick="return confirm('Are you sure?')">x</a>
-                        </td>-->
+<!--                        <td>-->
+<!--                            <a class="btn" th:href="@{/del}" onclick="return confirm('Are you sure?')">x</a>-->
+<!--                        </td>-->
                     </tr>
                     </tbody>
                 </table>
