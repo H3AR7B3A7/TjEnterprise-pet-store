@@ -47,9 +47,7 @@ public class Product {
 
     public void setBeschrijving(String beschrijving) { this.beschrijving = beschrijving; }
 
-    public BigDecimal getPrijs() {
-        return prijs;
-    }
+    public BigDecimal getPrijs() { return prijs; }
 
     public void setPrijs(BigDecimal prijs) { this.prijs = prijs; }
 
