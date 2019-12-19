@@ -69,17 +69,17 @@
                             </div>
                         </div>
                         <div id="errorSpans" th:if="${#fields.hasErrors()}">
-                            <div class="errorSpan">
-                                <span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="error"></span>
+                            <div class="errorSpan" th:if="${#fields.hasErrors('customerName')}">
+                                <span th:errors="*{customerName}" class="error"></span>
                             </div>
-                            <div class="errorSpan">
-                                <span th:if="${#fields.hasErrors('streetName')}" th:errors="*{streetName}" class="error"></span>
+                            <div class="errorSpan" th:if="${#fields.hasErrors('streetName')}">
+                                <span th:errors="*{streetName}" class="error"></span>
                             </div>
-                            <div class="errorSpan">
-                                <span th:if="${#fields.hasErrors('streetNumber')}" th:errors="*{streetNumber}" class="error"></span>
+                            <div class="errorSpan" th:if="${#fields.hasErrors('streetNumber')}">
+                                <span th:errors="*{streetNumber}" class="error"></span>
                             </div>
-                            <div class="errorSpan">
-                                <span th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}" class="error"></span>
+                            <div class="errorSpan" th:if="${#fields.hasErrors('mailAddress')}">
+                                <span th:errors="*{mailAddress}" class="error"></span>
                             </div>
                         </div>
                     </div>
