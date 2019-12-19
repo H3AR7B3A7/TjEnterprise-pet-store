@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+
+
 /**
  * CART CONTROLLER
  * @author Egven
@@ -45,10 +47,11 @@ public class CartController {
         }
     }
 
-    @GetMapping(value = "/cart/del{id}")
+   @GetMapping(value = "/cart/del/{id}")
     public String removeProductFromCart(@PathVariable(value = "id") int id){
         // TODO : Find a specific product in list to delete it
-        return "redirect:/cart";
+            Cart.removeItemFromCart(dao.findById(id).get());
+            return "redirect:/cart";
     }
 
     @GetMapping(value = "/cart/del")

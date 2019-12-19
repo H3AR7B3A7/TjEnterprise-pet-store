@@ -25,17 +25,16 @@ public class Cart {
      * ADD item to cart
      */
     public static void addItemToCart(Product product){
-        totalPrice = totalPrice.add(product.getPrijs());
-        cartContent.add(product);
-//        totalPrice = totalPrice.add(product.getPrijs());
+            totalPrice = totalPrice.add(product.getPrijs());
+            cartContent.add(product);
     }
 
     /**
      * REMOVE item from cart
      */
     public static void removeItemFromCart(Product product) {
-        cartContent.remove(product);
         totalPrice = totalPrice.subtract(product.getPrijs());
+        cartContent.remove(product);
 //        totalPrice = totalPrice.subtract(product.getPrijs());
     }
 

@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * PRODUCT MODEL
@@ -27,13 +28,11 @@ public class Product {
     private BigDecimal prijs;
     private String productCategorie;
     private String productImagePath;
-    private int aantal = 1;
 
     // Constructor
     public Product() {
         // Not empty
     }
-
 
     // Getters & Setters
     public int getId() { return id; }
@@ -48,7 +47,9 @@ public class Product {
 
     public void setBeschrijving(String beschrijving) { this.beschrijving = beschrijving; }
 
-    public BigDecimal getPrijs() { return prijs; }
+    public BigDecimal getPrijs() {
+        return prijs;
+    }
 
     public void setPrijs(BigDecimal prijs) { this.prijs = prijs; }
 
@@ -60,7 +61,16 @@ public class Product {
 
     public void setProductImagePath(String productImagePath) { this.productImagePath = productImagePath; }
 
-    public int getAantal() { return aantal; }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id;
+    }
 
-    public void setAantal(int aantal) { this.aantal = aantal; }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
