@@ -50,7 +50,7 @@ a:hover{
 
 .carousel-caption{
     position: absolute;
-    top: 50%;
+    top: 35%;
     transform: translateY(-50%);
 }
 
@@ -64,7 +64,7 @@ a:hover{
     font-size: 200%;
     font-weight: 500;
     text-shadow: 1px 1px 10px #000;
-    padding-bottom: 1rem;
+    padding-top: 50%;
 }
 
 /*--not working for some reason--*/
@@ -216,7 +216,10 @@ hr.light-100{
 
 @media (max-width: 768px) {
     .carousel-caption{
-        top: 45%;
+        top: 35%;
+    }
+    .carousel-caption h3{
+        padding-top: 50%;
     }
 
     .carousel-caption h1{
@@ -246,7 +249,10 @@ hr.light-100{
 
 @media (max-width: 576px) {
     .carousel-caption{
-        top: 40%;
+        top: 35%;
+    }
+    .carousel-caption h3{
+        padding-top: 45%;
     }
 
     .carousel-caption h1{
