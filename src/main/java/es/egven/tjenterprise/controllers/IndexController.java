@@ -38,6 +38,11 @@ public class IndexController {
         return "index";
     }
 
+    /**
+     * Filter products by categorie
+     *
+     * @return home page
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/index/{productCategorie}")
     public String showFilteredProducts(ModelMap map, @PathVariable(value = "productCategorie") String productCategorie) {
         map.addAttribute("allProducts", dao.findByCategorie(productCategorie));
