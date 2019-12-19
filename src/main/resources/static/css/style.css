@@ -111,6 +111,14 @@ h4{
     width: 80%;
 }
 
+.orderInputFields:hover{
+    border-color: teal !important;
+}
+
+.orderInputFields:focus{
+    border-color: teal !important;
+}
+
 .error{
     color: red;
     font-size: 1.1em;
