@@ -15,13 +15,14 @@
 }
 
 .active{
-    font-size: 1.6em !important;
+    border: 1px solid white !important;
+    border-radius: 10px;
 }
 
 /* INDEX STYLING */
 
 #filterTab{
-    padding-left: 1rem;
+    padding-left: 5rem;
     padding-right: 3rem;
     width: 10rem;
     padding-top: 1rem;
@@ -29,7 +30,7 @@
 }
 
 #shopTab{
-    width: calc(100% - 10rem);
+    width: calc(100% - 15rem);
 }
 
 h1{
