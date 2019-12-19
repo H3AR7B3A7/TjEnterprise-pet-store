@@ -171,6 +171,17 @@ h4{
 }
 
 @media (max-width: 576px) {
+    #shopTab{
+        width: 100%;
+        padding-right: 0;
+        padding-left: 5%;
+    }
+
+    #filterTab {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
     /*.active{*/
     /*    border: none !important;*/
     /*    margin-left: 2rem;*/
@@ -186,7 +197,7 @@ h4{
     }
 
     #filterTab{
-        padding-left: 1rem;
+        padding-left: 0;
         width: 100%;
         padding-top: 1rem;
         /*background-color: #d5d5d5;*/
