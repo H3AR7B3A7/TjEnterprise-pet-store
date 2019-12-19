@@ -27,7 +27,7 @@ public class Product {
     private BigDecimal prijs;
     private String productCategorie;
     private String productImagePath;
-
+    private int aantal = 1;
 
     // Constructor
     public Product() {
@@ -59,4 +59,8 @@ public class Product {
     public String getProductImagePath() { return productImagePath; }
 
     public void setProductImagePath(String productImagePath) { this.productImagePath = productImagePath; }
+
+    public int getAantal() { return aantal; }
+
+    public void setAantal(int aantal) { this.aantal = aantal; }
 }
