@@ -12,7 +12,7 @@ public class Cart {
 
     // Fields - ps: Made these protected and list final
     protected static final List<Product> cartContent = new ArrayList<>();
-    protected static BigDecimal totalPrice;
+    protected static BigDecimal totalPrice = BigDecimal.valueOf(0);
 
 
     // Constructor
@@ -25,6 +25,7 @@ public class Cart {
      * ADD item to cart
      */
     public static void addItemToCart(Product product){
+        totalPrice = totalPrice.add(product.getPrijs());
         cartContent.add(product);
 //        totalPrice = totalPrice.add(product.getPrijs());
     }
@@ -34,6 +35,7 @@ public class Cart {
      */
     public static void removeItemFromCart(Product product) {
         cartContent.remove(product);
+        totalPrice = totalPrice.subtract(product.getPrijs());
 //        totalPrice = totalPrice.subtract(product.getPrijs());
     }
 

@@ -20,16 +20,18 @@
                     <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Aantal</th>
                         <th>Price</th>
                         <!--<th></th>-->
                     </tr>
                     </thead>
                     <tbody>
                     <!--  TODO : Optional - Add a column with amount and '+' & '-' signs to change it  -->
-                    <tr th:each="i : ${nCart.cartContent}">
-                        <td th:text="*{i.naam}"></td>
+                    <tr th:each="product : ${nCart.cartContent}">
+                        <td th:text="*{product.naam}"></td>
 <!--                        <td th:text="*{i.amount}"><a id="minus" href="">-</a><a id="plus" href="">+</a></td>-->
-                        <td th:text="*{i.prijs}"></td>
+                        <td th:text="1"></td>
+                        <td th:text="*{product.prijs}"></td>
                         <!--  TODO : Add a delete button , need to find object in list first  -->
 <!--                        <td>-->
 <!--                            <a class="btn" th:href="@{/del}" onclick="return confirm('Are you sure?')">x</a>-->
@@ -37,6 +39,9 @@
                     </tr>
                     </tbody>
                 </table>
+                <div class="totalPriceShoppingCart container-fluid">
+                <h1 th:text="*{nCart.totalPrice}"></h1>
+                </div>
             </div>
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid text-center">
