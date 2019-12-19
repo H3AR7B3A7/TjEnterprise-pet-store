@@ -40,7 +40,7 @@
                     </tbody>
                 </table>
                 <div class="totalPriceShoppingCart container-fluid">
-                    <h1 th:text="*{nCart.totalPrice}"></h1>
+                    <h1 th:text="*{nCart.totalPrice + '&euro;'}"></h1>
                 </div>
                 <div>
                     <a th:href="@{~/cart/del}"

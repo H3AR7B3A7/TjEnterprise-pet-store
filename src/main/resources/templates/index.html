@@ -54,7 +54,7 @@
                                 <div class="card-title-container">
                                 <h4 class="card-title" th:text="*{product.naam}"></h4>
                                 </div>
-                                <p class="card-price" th:text="*{product.prijs}">&euro;</p>
+                                <p class="card-price" th:text="*{product.prijs + '&euro;'}"></p>
                                 <p class="card-text" th:text="*{product.beschrijving}"></p>
                                 <p th:text="*{product.productCategorie}"></p>
                                 <div class="addBtn">
