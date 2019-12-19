@@ -10,13 +10,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="text-center nav-item">
                     <a th:href="@{~/index}" th:class="'nav-link '+ ${(page == 'index')?'active':''}">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="text-center nav-item">
                     <a th:href="@{~/contact}" th:class="'nav-link '+ ${(page == 'contact')?'active':''}">Contact</a>
                 </li>
-                <li class="nav-item">
+                <li class="text-center nav-item">
                     <a th:href="@{~/cart}" th:class="'nav-link '+ ${(page == 'cart')?'active':''}"><img th:src="@{~/img/cart.png}" alt="Cart" id="whiteCart"></a>
                 </li>
             </ul>
