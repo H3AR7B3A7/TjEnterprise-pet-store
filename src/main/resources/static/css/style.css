@@ -20,6 +20,18 @@
 
 /* INDEX STYLING */
 
+#filterTab{
+    padding-left: 1rem;
+    padding-right: 3rem;
+    width: 10rem;
+    padding-top: 1rem;
+    height: max-content;
+}
+
+#shopTab{
+    width: calc(100% - 10rem);
+}
+
 h1{
     color: teal;
 }
@@ -114,6 +126,11 @@ h4{
     width: auto;
 }
 
+#filterTab a{
+    text-decoration: none !important;
+    color: teal!important;
+}
+
 /*MOBILE STYLING*/
 @media (max-width: 992px) {
     .orderInputFields{
@@ -143,5 +160,21 @@ h4{
     #error404 {
         height: 17rem;
         width: auto;
+    }
+
+    #filterTab{
+        padding-left: 1rem;
+        width: 100%;
+        padding-top: 1rem;
+        background-color: #d5d5d5;
+    }
+
+    #shopTab{
+        width: 100%;
+    }
+
+    #filterTab a{
+        text-decoration: none !important;
+        color: teal!important;
     }
 }
