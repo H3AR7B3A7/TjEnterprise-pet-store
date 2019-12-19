@@ -1,5 +1,10 @@
 /* NAV STYLING */
 
+#navTitle{
+    text-decoration: none;
+    color: white;
+}
+
 #whiteCart{
     height: 2rem;
     width: auto;
