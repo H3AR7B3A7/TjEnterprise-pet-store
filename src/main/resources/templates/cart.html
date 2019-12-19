@@ -30,19 +30,18 @@
                     <!--  TODO : Optional - Add a column with amount and '+' & '-' signs to change it  -->
                     <tr th:each="product : ${nCart.cartContent}">
                         <td th:text="*{product.naam}"></td>
-<!--                        <td th:text="*{i.amount}"><a id="minus" href="">-</a><a id="plus" href="">+</a></td>-->
+                        <!--<td th:text="*{i.amount}"><a id="minus" href="">-</a><a id="plus" href="">+</a></td>-->
                         <td th:text="1"></td>
                         <td th:text="*{product.prijs}"></td>
-                        <!--  TODO : Add a delete button , need to find object in list first  -->
-                         <td>
-                             <a th:href="@{~/cart/del/{id} (id=${product.id})}"
-                                onclick="return confirm('Are you sure?')">x</a>
-                         </td>
+                        <td>
+                            <a th:href="@{~/cart/del/{id} (id=${product.id})}"
+                               onclick="return confirm('Are you sure?')">x</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
                 <div class="totalPriceShoppingCart container-fluid">
-                <h1 th:text="*{nCart.totalPrice}"></h1>
+                    <h1 th:text="*{nCart.totalPrice}"></h1>
                 </div>
             </div>
             <!-- ORDER FORM  -->
@@ -53,7 +52,8 @@
                         <div id="text-input-span">
                             <div class="text-input">
                                 <label for="customerName" class="fieldLabel" th:text="#{lbl_customerName}"></label>
-                                <input class="orderInputFields" type="text" th:field="*{customerName}" id="customerName">
+                                <input class="orderInputFields" type="text" th:field="*{customerName}"
+                                       id="customerName">
                             </div>
                             <div class="text-input">
                                 <label for="streetName" class="fieldLabel" th:text="#{lbl_streetName}"></label>
@@ -61,7 +61,8 @@
                             </div>
                             <div class="text-input">
                                 <label for="streetNumber" class="fieldLabel" th:text="#{lbl_streetNumber}"></label>
-                                <input class="orderInputFields" type="text" th:field="*{streetNumber}" id="streetNumber">
+                                <input class="orderInputFields" type="text" th:field="*{streetNumber}"
+                                       id="streetNumber">
                             </div>
                             <div class="text-input">
                                 <label for="mailAddress" class="fieldLabel" th:text="#{lbl_mailAddress}"></label>
