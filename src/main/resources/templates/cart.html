@@ -43,6 +43,10 @@
                 <div class="totalPriceShoppingCart container-fluid">
                     <h1 th:text="*{nCart.totalPrice}"></h1>
                 </div>
+                <div>
+                    <a th:href="@{~/cart/del}"
+                       onclick="return confirm('Are you sure?')">Clear cart</a>
+                </div>
             </div>
             <!-- ORDER FORM  -->
             <div class="formWrapper container-fluid text-center">
