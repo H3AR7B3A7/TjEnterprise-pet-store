@@ -47,16 +47,30 @@ public class CartController {
         }
     }
 
+    /**
+     * Remove a product from cart
+     * @param id
+     * @return Cart page, to see item has been deleted
+     */
    @GetMapping(value = "/cart/del/{id}")
-    public String removeProductFromCart(@PathVariable(value = "id") int id){
-        // TODO : Find a specific product in list to delete it
-            Cart.removeItemFromCart(dao.findById(id).get());
-            return "redirect:/cart";
-    }
+    public String removeProductFromCart(@PathVariable(value = "id") int id) {
+       Optional<Product> optional = dao.findById(id);
+       if (optional.isPresent()) {
+           Cart.removeItemFromCart(optional.get());
+           return "redirect:/cart";
+       } else {
+           throw new ResourceNotFoundException();
+       }
+   }
 
+    /**
+     * Remove all products from cart
+     * @return Cart page, to see items have been deleted
+     */
     @GetMapping(value = "/cart/del")
     public String clearCart(){
         // TODO : Find a way to clear list
+        Cart.clearCart();
         return "redirect:/cart";
     }
 }

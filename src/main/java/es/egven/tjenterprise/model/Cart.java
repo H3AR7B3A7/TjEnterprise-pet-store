@@ -35,7 +35,6 @@ public class Cart {
     public static void removeItemFromCart(Product product) {
         totalPrice = totalPrice.subtract(product.getPrijs());
         cartContent.remove(product);
-//        totalPrice = totalPrice.subtract(product.getPrijs());
     }
 
     /**
@@ -43,7 +42,7 @@ public class Cart {
      */
     public static void clearCart(){
         cartContent.clear();
-//        totalPrice = new BigDecimal(0);
+        totalPrice = new BigDecimal(0);
     }
 
     // TODO : Optional - Make methods to write/load cartContent to local file (in absence of user DB)
