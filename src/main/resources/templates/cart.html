@@ -68,7 +68,7 @@
                                 <input class="orderInputFields" type="text" th:field="*{mailAddress}" id="mailAddress">
                             </div>
                         </div>
-                        <div id="errorSpans">
+                        <div id="errorSpans" th:if="${#fields.hasErrors()}">
                             <div class="errorSpan">
                                 <span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="error"></span>
                             </div>

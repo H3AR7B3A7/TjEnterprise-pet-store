@@ -9,28 +9,39 @@
     <div id="content-wrap">
         <!--  NAV  -->
         <nav th:replace="~{fragments/nav::nav(index)}"></nav>
-
         <!-- Table to show product as  cards-->
         <div class="container-fluid padding">
             <div class="text-center">
                 <h1>Tim & Jefrey's</h1>
             </div>
-            <div class="row padding justify-content-center">
-                <div class="col-xs-12" th:each="product : ${allProducts}">
-                    <div class="card" >
-                        <img class="card-imd-top" th:src="|@{*{product.productImagePath}}|" alt="hondenKauwBeen">
-                        <div class="card-body">
-                            <div class="card-title-container">
-                            <h4 class="card-title" th:text="*{product.naam}"></h4>
+            <div class="row">
+                <div id="filterTab">
+                    <h4>Filters</h4>
+                    <hr class="light">
+                    <p>Category:</p>
+                    <a href="/index/dier">Animals</a><br>
+                    <a href="/index/food">Food</a><br>
+                    <a href="/index/habitat">Habitats</a>
+                    <a href="/index/toy">Toys</a>
+                    <hr class="light">
+                </div>
+                <div id="shopTab" class="row padding justify-content-center">
+                    <div class="col-xs-12" th:each="product : ${allProducts}">
+                        <div class="card" >
+                            <img class="card-imd-top" th:src="|@{*{product.productImagePath}}|" alt="hondenKauwBeen">
+                            <div class="card-body">
+                                <div class="card-title-container">
+                                <h4 class="card-title" th:text="*{product.naam}"></h4>
+                                </div>
+                                <p class="card-price" th:text="*{product.prijs}"></p>
+                                <p class="card-text" th:text="*{product.beschrijving}"></p>
+                                <p th:text="*{product.productCategorie}"></p>
+                                <div class="addBtn">
+                                    <a th:href="@{~/{id} (id=${product.id})}" id="addProductBtn" th:text="'+'"></a>
+                                </div>
                             </div>
-                            <p class="card-price" th:text="*{product.prijs}"></p>
-                            <p class="card-text" th:text="*{product.beschrijving}"></p>
-                            <p th:text="*{product.productCategorie}"></p>
-                            <div class="addBtn">
-                                <a th:href="@{~/{id} (id=${product.id})}" id="addProductBtn" th:text="'+'"></a>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
