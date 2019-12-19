@@ -108,11 +108,11 @@ h4{
 }
 
 #text-input-span{
-    width: 50%;
+    width: 100%;
 }
 
 #errorSpans{
-    width: 50%;
+    width: 100%;
 }
 
 .errorSpan{
