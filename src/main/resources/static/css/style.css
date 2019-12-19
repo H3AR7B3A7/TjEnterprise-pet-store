@@ -162,6 +162,11 @@ h4{
 }
 
 @media (max-width: 576px) {
+    .active{
+        border: none !important;
+        margin-left: 2rem;
+    }
+
     .orderInputFields{
         width: 60%;
     }
