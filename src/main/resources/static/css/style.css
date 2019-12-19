@@ -25,6 +25,9 @@
 }
 
 /* INDEX STYLING */
+#storeContent{
+    padding-left: 4rem;
+}
 
 #filterTab{
     padding-left: 5rem;
@@ -172,7 +175,7 @@ h4{
         padding-left: 1rem;
         width: 100%;
         padding-top: 1rem;
-        background-color: #d5d5d5;
+        /*background-color: #d5d5d5;*/
     }
 
     #shopTab{

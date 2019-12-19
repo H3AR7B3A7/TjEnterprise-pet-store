@@ -9,20 +9,40 @@
     <div id="content-wrap">
         <!--  NAV  -->
         <nav th:replace="~{fragments/nav::nav(index)}"></nav>
-        <!-- Table to show product as  cards-->
-        <div class="container-fluid padding">
-            <div class="text-center">
-                <h1>Tim & Jefrey's</h1>
+        <!-- Image Slider -->
+        <div id="slides" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#slides" data-slide-to="0" class="active"></li>
+                <li data-target="#slides" data-slide-to="1"></li>
+                <li data-target="#slides" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/background.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h1 class="display-2">Tim & Jefrey's</h1>
+                        <h3>Your best choice for petstore</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/background2.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/background3.jpg" alt="">
+                </div>
             </div>
+        </div>
+        <!-- Table to show product as cards-->
+        <div id="storeContent" class="container-fluid padding">
             <div class="row">
                 <div id="filterTab">
                     <h4>Filters</h4>
                     <hr class="light">
                     <p>Category:</p>
-                    <a th:href="@{/index}">All</a>
+                    <a href="/index" th:if="${#httpServletRequest.requestURL!='localhost:8080/index'}">Everything</a><br>
                     <a href="/index/dier">Animals</a><br>
                     <a href="/index/food">Food</a><br>
-                    <a href="/index/habitat">Habitats</a>
+                    <a href="/index/habitat">Habitats</a><br>
                     <a href="/index/toy">Toys</a>
                     <hr class="light">
                 </div>
