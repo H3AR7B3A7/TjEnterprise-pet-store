@@ -14,6 +14,9 @@
                     <a th:href="@{~/index}" th:class="'nav-link '+ ${(page == 'index')?'active':''}">Home</a>
                 </li>
                 <li class="text-center nav-item">
+                    <a th:href="@{~/index#shop}" th:class="'nav-link '+ ${(page == 'index#shop')?'active':''}">Shop</a>
+                </li>
+                <li class="text-center nav-item">
                     <a th:href="@{~/contact}" th:class="'nav-link '+ ${(page == 'contact')?'active':''}">Contact</a>
                 </li>
                 <li class="text-center nav-item">
