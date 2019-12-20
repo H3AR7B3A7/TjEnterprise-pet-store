@@ -30,6 +30,11 @@
 /*    padding-left: 4rem;*/
 /*}*/
 
+#mainTitle{
+    padding-top: 1%;
+    font-size: 300%;
+}
+
 #filterTab{
     padding-left: 5rem;
     padding-right: 3rem;
@@ -171,6 +176,13 @@ h4{
 }
 
 @media (max-width: 576px) {
+    #mainTitle{
+        padding-top: 1%;
+        font-size: 250%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
     #shopTab{
         width: 100%;
         padding-right: 0;
@@ -199,7 +211,7 @@ h4{
     #filterTab{
         padding-left: 0;
         width: 100%;
-        padding-top: 1rem;
+        padding-top: 0;
         /*background-color: #d5d5d5;*/
     }
 
