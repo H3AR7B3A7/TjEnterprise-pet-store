@@ -38,7 +38,7 @@ public class CartController {
         Optional<Product> optional = dao.findById(id);
         if(optional.isPresent()){
             Cart.addItemToCart(optional.get());
-            return "redirect:/index#shop";
+            return "redirect:/index#mainTitle";
         } else {
             throw new ResourceNotFoundException();
         }
