@@ -26,7 +26,9 @@ public class Product {
     @NotBlank()
     @DecimalMin("1.00")
     private BigDecimal prijs;
+    @NotBlank()
     private String productCategorie;
+    @NotBlank()
     private String productImagePath;
 
     // Constructor
