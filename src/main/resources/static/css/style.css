@@ -36,7 +36,7 @@
 }
 
 #filterTab{
-    padding-left: 5rem;
+    padding-left: 10rem;
     padding-right: 3rem;
     width: 10rem;
     padding-top: 1rem;
@@ -68,6 +68,8 @@ h4{
 .card {
     width: 14rem;
     height: 26rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 /*Fixed card img height, bcs some browsers do scale and offset cards content*/
