@@ -1,5 +1,7 @@
 package es.egven.tjenterprise.model;
 
+import es.egven.tjenterprise.exceptions.ResourceNotFoundException;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +36,12 @@ public class Cart {
      * REMOVE item from cart
      */
     public static void removeItemFromCart(Product product) {
-        totalPrice = totalPrice.subtract(product.getPrijs());
-        cartContent.remove(product);
+        if(cartContent.contains(product)) {
+            totalPrice = totalPrice.subtract(product.getPrijs());
+            cartContent.remove(product);
+        } else{
+            throw new ResourceNotFoundException();
+        }
     }
 
     /**
