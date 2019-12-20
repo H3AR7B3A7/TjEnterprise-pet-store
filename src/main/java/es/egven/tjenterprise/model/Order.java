@@ -23,7 +23,7 @@ public class Order {
     @Size(min = 3, max = 50, message = "{name_error}")
     private String customerName;
 
-    @Size(min = 10, max = 50, message = "{street_name_error}")
+    @Size(min = 5, max = 50, message = "{street_name_error}")
     private String streetName;
 
     @Pattern(regexp = "^\\d{1,4}([a-zA-Z]{1,2}\\d{1,3}|[a-zA-Z]{1,2}|)$",message = "{street_number_error}")
