@@ -50,7 +50,9 @@
 h1{
     color: teal;
 }
-
+.errortextmsg h2{
+    color: #434343;
+}
 h4{
 
 }
@@ -63,7 +65,6 @@ h4{
     /*don't set width to 80%*/
     /*sorry for this ^^ but see it as an example, not my rule*/
 }
-
 /*Fixed card size*/
 .card {
     width: 14rem;
