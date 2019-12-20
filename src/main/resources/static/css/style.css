@@ -24,11 +24,13 @@
     border-radius: 10px;
 }
 
+
 /* INDEX STYLING */
 
-/*#storeContent{*/
-/*    padding-left: 4rem;*/
-/*}*/
+#filterTab a{
+    text-decoration: none !important;
+    color: teal!important;
+}
 
 #mainTitle{
     padding-top: 1%;
@@ -57,14 +59,8 @@ h4{
 
 .row{
     text-align: center;
-    /*don't use float, or footer will break*/
-    /*float: right;*/
-    /*and add a div, in row, with whole page content to make place for filter*/
-    /*don't set width to 80%*/
-    /*sorry for this ^^ but see it as an example, not my rule*/
 }
 
-/*Fixed card size*/
 .card {
     width: 14rem;
     height: 26rem;
@@ -72,19 +68,14 @@ h4{
     margin-right: 1.5rem;
 }
 
-/*Fixed card img height, bcs some browsers do scale and offset cards content*/
-/*Maybe look for specific size pictures using google img tools, ex: 600x800*/
 .card img{
     height: 10rem;
 }
 
-/*These make card a lot bigger, consider 1 line titles only*/
-/*This fixes double line title offspring for '+' buttons*/
 .card-title-container{
     /*padding-bottom: 1rem;*/
 }
-/*Maybe consider other font(size)?*/
-/*This fixes double line comments offspring for '+' buttons*/
+
 .card-body p{
     height: 2rem;
 }
@@ -99,6 +90,7 @@ h4{
     padding-right: 0.5rem;
     bottom: 0 !important;
 }
+
 .addBtn{
     text-align: right !important;
 }
@@ -144,6 +136,15 @@ h4{
     height: 2.3rem;
 }
 
+
+/*CHECKOUT PAGE STYLING*/
+
+#thanks{
+    padding-top: 12%;
+    color: #434343;
+}
+
+
 /*404 PAGE STYLING*/
 
 #error404{
@@ -151,10 +152,6 @@ h4{
     width: auto;
 }
 
-#filterTab a{
-    text-decoration: none !important;
-    color: teal!important;
-}
 
 /*MOBILE STYLING*/
 @media (max-width: 992px) {
