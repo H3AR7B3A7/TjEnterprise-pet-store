@@ -27,7 +27,8 @@ public class Cart {
     public static void addItemToCart(Product product){
             totalPrice = totalPrice.add(product.getPrijs());
             cartContent.add(product);
-    }
+        }
+
 
     /**
      * REMOVE item from cart
