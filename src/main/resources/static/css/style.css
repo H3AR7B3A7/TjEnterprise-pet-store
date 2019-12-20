@@ -38,7 +38,7 @@
 }
 
 #filterTab{
-    padding-left: 10rem;
+    padding-left: 5rem;
     padding-right: 3rem;
     width: 10rem;
     padding-top: 1rem;
@@ -142,6 +142,13 @@ h4{
 #thanks{
     padding-top: 12%;
     color: #434343;
+}
+
+
+/*SOCIAL PAGE STYLING*/
+
+#socialIpsum{
+
 }
 
 
