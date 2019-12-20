@@ -1,5 +1,6 @@
 package es.egven.tjenterprise.controllers;
 
+import es.egven.tjenterprise.model.Cart;
 import es.egven.tjenterprise.model.OrderDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ public class CheckoutController {
      */
     @GetMapping(value = "/cart/checkout")
     public String showCheckout(){
+        Cart.clearCart();
         return "checkout";
     }
 
