@@ -2,7 +2,7 @@
 End term assignment for Tim &amp; Jefrey's petstore
 
 Authors: Etixz &amp; H3AR7B3A7<br>
-Property of: Erasmus highschool of Bruxelles
+Property of: Erasmus highschool of Brussels
 
 The assignment was to create a webshop for two given owners and model customers.
 The shop had to have a way to sort products, store them to a cart and create an order.
