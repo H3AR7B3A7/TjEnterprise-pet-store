@@ -1,4 +1,4 @@
-# tjenterprise
+# Web shop: tjenterprise
 End term assignment for Tim &amp; Jefrey's petstore
 
 Authors: Etixz &amp; H3AR7B3A7<br>
